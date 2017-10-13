@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+Created: 12.10.2017.
+Serheos Morello
+Simple to-do list.
+-->
+
+<html>
+    <head>
+        <title>To-do list</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+		<script src="script.js"> </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+          <div class="todo">
+            <h1>Список дел</h1>
+            <input type="text" id="new" class="new_act" placeholder="Что еще сделать?">
+            <button class="add_new" onclick="addnew()" for="new"> </button>
+          </div>
+          <ul id="list">
+            <li>
+			<div class="type"></div>
+			<div class="title">Помыть посуду</div>
+			<div class="descript">не забудь сковородку!</div>
+			<div class="time">2017/02/12 12:33</div>
+			</li>
+            <li>
+			<div class="type"></div>
+			<div class="title">Сходить в магазин</div>
+			<div class="descript">сахар, чай, вино</div>
+			<div class="time">2017/02/11 10:10</div>
+			</li>
+          </ul>
+        </div>    
+    </body>
+</html>
