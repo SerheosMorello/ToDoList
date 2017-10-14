@@ -52,6 +52,9 @@ function addnew() {
   var li = document.createElement("li");
   var inputs = document.getElementById("new").value;
   var span = document.createElement("SPAN");
+  var type = document.createElement("DIV");
+  type.className = "type";
+  li.appendChild(type);
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
@@ -61,15 +64,12 @@ function addnew() {
   title.appendChild(t);
   title.className = "title";
   li.appendChild(title);
-  if (inputs === '') {
+	if (inputs === '') {
     alert("Добавьте описание задачи!");
   } 
   else {  document.getElementById("list").appendChild(li);
   }
   document.getElementById("new").value = "";
-  var type = document.createElement("DIV");
-  type.className = "type";
-  li.appendChild(type);
   var descript = document.createElement("DIV");
   descript.className = "descript";
   li.appendChild(descript);
