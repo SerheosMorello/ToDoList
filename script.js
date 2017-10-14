@@ -2,9 +2,15 @@
 // Create a "close" button and append it to each list item
 window.onload = function(){
     added();
+	init()
     closed();
     checked();
 };
+
+function init(){
+$('input').focus(function(){$('.block').show();})
+$('button').click(function(){$('.block').hide();})
+}
 
 function added(){
 var myNodelist = document.getElementsByTagName("LI");
@@ -53,15 +59,19 @@ function addnew() {
 }
 
   var li = document.createElement("li");
-  var inputs = document.getElementById("new").value;
+  
+  
   var span = document.createElement("SPAN");
   var type = document.createElement("DIV");
   type.className = "type";
   li.appendChild(type);
+  
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
+  
+  var inputs = document.getElementById("new").value;
   var t = document.createTextNode(inputs);
   var title = document.createElement("DIV");
   title.appendChild(t);
@@ -70,15 +80,25 @@ function addnew() {
 	if (inputs === '') {
     alert("Добавьте описание задачи!");
   } 
-  else {  document.getElementById("list").appendChild(li);
+	else {  document.getElementById("list").appendChild(li);
   }
   document.getElementById("new").value = "";
-  var descript = document.createElement("DIV");
-  descript.className = "descript";
-  li.appendChild(descript);
+  
+  var description = document.createElement("DIV");
+  inputs = document.getElementById("description").value;
+  t = document.createTextNode(inputs);
+  description.appendChild(t);
+  description.className = "description";
+  li.appendChild(description);
+  document.getElementById("description").value = "";
+  
   var time = document.createElement("DIV");
   time.className = "time";
+  var now = new Date();
+  var data = now.getDate() + '/' + now.getMonth() + '/' + now.getFullYear() + ' ' + now.getUTCHours()+":"+now.getUTCMinutes();
+  time.append(data);
   li.appendChild(time);
+  
   for (var i = 0; i < close.length; i++) {
     close[i].onclick = function() {
       var div = this.parentElement;
