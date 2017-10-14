@@ -83,7 +83,7 @@ h1{
   text-transform: lowercase;
 }
 .todo{
-    padding-bottom: 0px;
+    padding-bottom: 11px;
 }
 .new_act {
   width: 63%;
@@ -108,7 +108,7 @@ h1{
   height: 50px;
   border-radius: 50%;
   position: relative;
-  top: 0px;
+  top: 5px;
   left: 10px;
   z-index: 9999;
   background-color: yellowgreen;
@@ -185,6 +185,9 @@ ul li.checked {
   background: #eaffea;
   text-decoration: line-through;
   color: #999;
+}
+ul li.checked .type {
+	background-color: lightgrey;
 }
 
  ul li.checked::before {
