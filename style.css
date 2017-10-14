@@ -157,6 +157,7 @@ ul li {
   /*transition: background-color .3s;*/
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 5px;
   list-style: none;
 }
 
