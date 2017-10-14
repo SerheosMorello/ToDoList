@@ -28,6 +28,7 @@ for (var i = 0; i < close.length; i++){
 }
 }
 
+
 // Add a "checked" symbol when clicking on a list item
 function checked(){
 var list = document.querySelector('ul');
@@ -35,9 +36,11 @@ list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
+   if (ev.target.tagName === 'DIV' && !(ev.target.getAttribute('class') === 'type')) {
+	ev.target.parentElement.classList.toggle('checked');
+  }
 }, false);
 }
-
 
 function addnew() {
     
