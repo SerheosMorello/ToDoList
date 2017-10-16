@@ -7,7 +7,6 @@
 	position: absolute;
   width: 25px;
   height: 25px;
-  background-color: #fd7777;
   text-align: center;
   padding-bottom: 0px;
   border-radius: 25%;
@@ -23,7 +22,7 @@ li:hover .type{
     width: 25px;
     height: 25px;
     background-color: white;
-    margin-left: -13px;
+    margin-left: 23px;
     border-radius: 8px;
     left: -23px;
 }

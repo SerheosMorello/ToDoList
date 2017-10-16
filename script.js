@@ -1,8 +1,8 @@
 //credits to w3schools
 // Create a "close" button and append it to each list item
 window.onload = function(){
+    init();
     added();
-	init()
     closed();
     checked();
 };
@@ -10,6 +10,7 @@ window.onload = function(){
 function init(){
 $('input').focus(function(){$('.block').show();})
 $('button').click(function(){$('.block').hide();})
+$('select.new').on('change', function() {$('.select.new').css('background-color', $('.select.new').val());});
 }
 
 function added(){
@@ -34,7 +35,6 @@ for (var i = 0; i < close.length; i++){
 }
 }
 
-
 // Add a "checked" symbol when clicking on a list item
 function checked(){
 var list = document.querySelector('ul');
@@ -48,7 +48,7 @@ list.addEventListener('click', function(ev) {
 }, false);
 }
 
-function addnew() {
+function addnew(){
     
   var close = document.getElementsByClassName("close");
     for (var i = 0; i < close.length; i++){
@@ -59,10 +59,24 @@ function addnew() {
 }
 
   var li = document.createElement("li");
-  
-  
   var span = document.createElement("SPAN");
+  var select = document.createElement("SELECT");
+  var option1 = document.createElement("OPTION");
+  var option2 = document.createElement("OPTION");
+  var option3 = document.createElement("OPTION");
+  var option4 = document.createElement("OPTION");
   var type = document.createElement("DIV");
+  select.className = "select add";
+  select.style = "background-color: "+ $(".select.new").val() +";";
+  option1.style ="background-color: #fd7777;";
+  option2.style ="background-color: #f5d841;";
+  option3.style ="background-color: #337ab7;";
+  option4.style ="background-color: #3c763d;";
+  select.appendChild(option1);
+  select.appendChild(option2);
+  select.appendChild(option3);
+  select.appendChild(option4);
+  type.appendChild(select);
   type.className = "type";
   li.appendChild(type);
   
@@ -106,7 +120,6 @@ function addnew() {
     }
   }
 }
-
 
 //active class for button animation
 $(function (){
