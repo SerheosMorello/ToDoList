@@ -2,26 +2,18 @@
 // Create a "close" button and append it to each list item
 window.onload = function(){
     init();
-    added();
     closed();
     checked();
 };
 
+function changetype(){
+$('select.add').on('change', function() {$('.select.add').css('background-color', $('.select.add').val());})
+}
+
 function init(){
 $('input').focus(function(){$('.block').show();})
 $('button').click(function(){$('.block').hide();})
-$('select.new').on('change', function() {$('.select.new').css('background-color', $('.select.new').val());});
-}
-
-function added(){
-var myNodelist = document.getElementsByTagName("LI");
-for (i = 0; i < myNodelist.length; i++) {
-  var txt = document.createTextNode("\u00D7");
-  var span = document.createElement("SPAN");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].insertBefore(span, myNodelist[i].childNodes[0]);
-}
+$('select.new').on('change', function() {$('.select.new').css('background-color', $('.select.new').val());})
 }
 
 // Click on a "x" button to delete the current list item
@@ -66,25 +58,28 @@ function addnew(){
   var option3 = document.createElement("OPTION");
   var option4 = document.createElement("OPTION");
   var type = document.createElement("DIV");
-  select.className = "select add";
   select.style = "background-color: "+ $(".select.new").val() +";";
+  option1.value ="#fd7777";
   option1.style ="background-color: #fd7777;";
+  option2.value ="#f5d841";
   option2.style ="background-color: #f5d841;";
+  option3.value ="#337ab7";
   option3.style ="background-color: #337ab7;";
+  option4.value ="#3c763d";
   option4.style ="background-color: #3c763d;";
   select.appendChild(option1);
   select.appendChild(option2);
   select.appendChild(option3);
   select.appendChild(option4);
+  select.className = "select add";
+  select.addEventListener('change', changetype, false);
   type.appendChild(select);
   type.className = "type";
   li.appendChild(type);
-  
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
-  
   var inputs = document.getElementById("new").value;
   var t = document.createTextNode(inputs);
   var title = document.createElement("DIV");
@@ -112,6 +107,7 @@ function addnew(){
   var data = now.getDate() + '/' + now.getMonth() + '/' + now.getFullYear() + ' ' + now.getUTCHours()+":"+now.getUTCMinutes();
   time.append(data);
   li.appendChild(time);
+
   
   for (var i = 0; i < close.length; i++) {
     close[i].onclick = function() {
